@@ -1,24 +1,28 @@
-# PasswordManager
+# PasswordManager 📎🔑
 
-## Requirements
+## Requirements 📝
 
->- Store passwords secure 
+>- Store passwords securely 
 >- Encrypt and decrypt passwords
->- Aoutofill on Webseit 
+>- Autofill on Webseit 
 
-## languages used
+## Programming 👨‍💻
 
->- Java and React
+>- Backend: Java 
+>- Frontend: Javascript (React + Vite)
 
-## Encryption 
+## Encryption 🔐
 
->- Enter password and name of the webseit.
->>- Encrypt password with AES base 64 and store result 
->>- Count letters in webseite name and caesar encryption all letters in the password AES code with the number of letters of the webseit name.
->- store new AES code. 
+>>- Encrypt password with AES base 64 and hash
+>>- Salt encryped password.
+>- Store new AES code. 
 
-## Decryption 
+## LogIn 🔓
 
->- Count letters in webseit name.
->- Ceaser decrypt stored AES code with number of letters in webseit name 
->- Decrypt AES code with key 
+>- login to safe.
+>>- open web application
+>>- log onto page
+>>>-  encrypt input and compared to base password
+>>- choose password to show
+>>- enter 4 digit pin to show
+>- Decrypt password
