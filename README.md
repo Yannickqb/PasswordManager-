@@ -26,3 +26,7 @@
 >>- choose password to show
 >>- enter 4 digit pin to show
 >- Decrypt password
+
+## Add Password to Safe 
+>- input name + password
+>- encrypt and add to .json (data file)
