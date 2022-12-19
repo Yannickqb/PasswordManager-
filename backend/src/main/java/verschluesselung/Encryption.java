@@ -1,17 +1,28 @@
-import javax.crypto.BadPaddingException;
-import javax.crypto.Cipher;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
+package verschluesselung;
+
+import javax.crypto.*;
+import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.KeySpec;
 import java.util.Base64;
 
 public class Encryption {
-    public byte[] key = "testtesttesttest".getBytes(StandardCharsets.UTF_8);
 
-    public String encrypt(String datatosend) {
+    public SecretKey hash(User user) throws NoSuchAlgorithmException, InvalidKeySpecException {
+        SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+        char[] password = user.getPassword().toCharArray();
+        byte[] username = user.getUsername().getBytes(StandardCharsets.UTF_8);
+        KeySpec spec = new PBEKeySpec(password, username, 65536, 256);
+        SecretKey tmp = factory.generateSecret(spec);
+        SecretKey secret = new SecretKeySpec(tmp.getEncoded(), "AES");
+        return secret;
+    }
+
+    public String encrypt(String datatosend, User user) {
         byte[] safebyte;
         //... secret sequence of bytes
         byte[] dataToSend = datatosend.getBytes(StandardCharsets.UTF_8);
@@ -20,8 +31,8 @@ public class Encryption {
         try {
             Cipher c = Cipher.getInstance("AES");
 
-            SecretKeySpec k = new SecretKeySpec(key, "AES");
-            c.init(Cipher.ENCRYPT_MODE, k);
+            SecretKey secretKey = hash(user);
+            c.init(Cipher.ENCRYPT_MODE, secretKey);
             byte[] encryptedData = c.doFinal(dataToSend);
 
             safebyte = Base64.getEncoder().encode(encryptedData);
@@ -38,17 +49,19 @@ public class Encryption {
             e.printStackTrace();
         } catch (InvalidKeyException e) {
             e.printStackTrace();
+        } catch (InvalidKeySpecException e) {
+            e.printStackTrace();
         }
 
         return "fehler";
     }
 
-    public String decryption(String data) {
+    public String decryption(String data, User user) {
         try {
             byte[] decodedData = Base64.getDecoder().decode(data);
             Cipher c = Cipher.getInstance("AES");
-            SecretKeySpec k = new SecretKeySpec(key, "AES");
-            c.init(Cipher.DECRYPT_MODE, k);
+            SecretKey secretKey = hash(user);
+            c.init(Cipher.DECRYPT_MODE, secretKey);
             byte[] decryptedData = c.doFinal(decodedData);
             String dataString = new String(decryptedData);
             return dataString;
@@ -61,6 +74,8 @@ public class Encryption {
         } catch (IllegalBlockSizeException e) {
             e.printStackTrace();
         } catch (BadPaddingException e) {
+            e.printStackTrace();
+        } catch (InvalidKeySpecException e) {
             e.printStackTrace();
         }
         return "fehler";
