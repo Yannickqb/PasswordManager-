@@ -9,9 +9,10 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 
 public class Encryption {
-    public byte[] key = "testtesttesttest".getBytes(StandardCharsets.UTF_8);
+    public byte[] key;
 
-    public String encrypt(String datatosend) {
+    public String encrypt(String datatosend, User user) {
+        key = user.getPassword().getBytes(StandardCharsets.UTF_8);
         byte[] safebyte;
         //... secret sequence of bytes
         byte[] dataToSend = datatosend.getBytes(StandardCharsets.UTF_8);
