@@ -9,7 +9,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.List;
 
 public class DB {
     private ArrayList<User> users = new ArrayList<>();
@@ -19,12 +18,12 @@ public class DB {
         return users;
     }
 
-    public void safe() throws IOException {
+    public void safe(User user) throws IOException {
         Gson gson = new Gson();
         FileWriter fileWriter = new FileWriter("./data.json");
         gson.toJson(users, fileWriter);
+        this.load();
         fileWriter.close();
-
     }
 
     public void load() throws FileNotFoundException {

@@ -7,6 +7,8 @@ public class User {
     protected int userid;
     protected String username = "Gast";
     protected static int number = 0;
+    public String pa;
+
 
     private ArrayList<UserPassword> usersPasswords = new ArrayList<>();
 
@@ -33,6 +35,9 @@ public class User {
         return userPassword;
     }
 
+    public void encryptpasw(UserPassword userPassword){
+
+    }
     public void addUserPassword(UserPassword userPassword){
         usersPasswords.add(userPassword);
     }
