@@ -1,0 +1,35 @@
+#navContainer {
+    box-sizing: border-box;
+    background-color: #e5e5f7;
+    opacity: 0.9;
+
+    border-bottom: 2px solid rgb(51, 50, 50);
+
+    height: 8vh;
+    width: auto;
+
+    margin: 0;
+    padding: 0 10px 0 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    -moz-box-shadow: 0 0 3px black;
+    -webkit-box-shadow: 0 0 3px black;
+    box-shadow: 0 0 3px black;
+}
+
+h1{
+    margin: 0;
+    padding: 0;
+}
+
+h1:hover {
+    cursor: default;
+}
+
+#logOut{
+    right: 10px;
+}
