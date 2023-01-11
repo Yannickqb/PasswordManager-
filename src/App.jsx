@@ -1,5 +1,6 @@
 import "./App.css";
-import { Navbar } from "./comps/Navbar";
+import Navbar from "./comps/Navbar";
+import InputWithIcon from "./comps/addpassword";
 import { PasswordList } from "./comps/PasswordList";
 
 import { userName } from "./comps/PasswordList";
@@ -22,6 +23,8 @@ function App() {
         <p className="instructions"> - to display any password press on the name of it in your password-list. </p>
         <p className="instructions"> - add more passwords to your list by pressing the "+"-button. </p>
         <p className="instructions"> - don't forget to log out! otherwise we'll log you out after 15 minutes. </p>
+
+        <InputWithIcon/>
       </div>
       </div>
     </div>
