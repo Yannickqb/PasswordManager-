@@ -9,6 +9,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class DB {
     private ArrayList<User> users = new ArrayList<>();
@@ -18,11 +20,20 @@ public class DB {
         return users;
     }
 
-    public void safe(User user) throws IOException {
+    public User getSpecificUser(String username){
+        for (User user : users
+             ) {
+            if (username.equals(user.getUsername()) ){
+                return user;
+            }
+        }
+        return null;
+    }
+
+    public void safe() throws IOException {
         Gson gson = new Gson();
         FileWriter fileWriter = new FileWriter("./data.json");
         gson.toJson(users, fileWriter);
-        this.load();
         fileWriter.close();
     }
 
@@ -35,6 +46,17 @@ public class DB {
 
     public void addUser(User user){
         users.add(user);
+    }
+
+    public String newUserPassword(){
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter an index: ");
+        String  password = scanner.nextLine();
+
+       return password;
+
     }
 
 

@@ -1,5 +1,7 @@
 package verschluesselung;
 
+import java.util.Scanner;
+
 public class UserPassword {
     private String usernameSite;
     private String passwordSite;
@@ -22,6 +24,10 @@ public class UserPassword {
     public String getLink() {
         return link;
     }
+
+
+
+
 
 
 

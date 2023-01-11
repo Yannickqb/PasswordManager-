@@ -31,13 +31,20 @@ public class User {
         return password;
     }
 
-    public UserPassword getUserPasswordsList(UserPassword userPassword) {
-        return userPassword;
+    public ArrayList<UserPassword> getUserPasswordsList() {
+        return usersPasswords;
     }
 
-    public void encryptpasw(UserPassword userPassword){
-
+    public UserPassword getSpecificPassword(String link){
+        for (UserPassword userPassword : usersPasswords
+             ) {
+            if (userPassword.getLink().equals(link)){
+                return userPassword;
+            }
+        }
+        return null;
     }
+
     public void addUserPassword(UserPassword userPassword){
         usersPasswords.add(userPassword);
     }
