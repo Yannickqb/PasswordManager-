@@ -1,8 +1,4 @@
-import "./PasswordList.css";
-import "./D_entry.css";
-
 import { data } from "../data/data";
-import { useState } from "react";
 
 export const userName = data.userName;
 
@@ -22,3 +18,5 @@ export function D_home() {
     </>
   );
 }
+
+

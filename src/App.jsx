@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./App.css";
+import "./comps/PasswordList.css";
+import "./comps/D_entry.css";
 import { Navbar } from "./comps/Navbar";
 import { D_home } from "./comps/PasswordList";
 //import { PasswordList } from "./comps/PasswordList";
