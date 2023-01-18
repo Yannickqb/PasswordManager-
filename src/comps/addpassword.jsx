@@ -29,9 +29,9 @@ export function InputWithIcon() {
         })
     }
 
-
-
     return (
+        <>
+        
         <Box sx={{ width: '300px', backgroundColor: '#bebebe', borderStyle: 'solid' }}>
             <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
                 <img src={WebseiteIcon} height={30} />
@@ -48,4 +48,7 @@ export function InputWithIcon() {
             <Stack direction="row" spacing={2}>
                 <Button onClick={safePassword()}>Safe</Button>
             </Stack>
-3b7f35
+        </Box>
+        </>
+    );
+    }  
