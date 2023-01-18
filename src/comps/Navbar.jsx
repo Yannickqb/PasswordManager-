@@ -17,7 +17,7 @@ export function Navbar(){
         <div id='navContainer'>
             <div id='titleContainer'>
                 <h1> Password Safe <Emoji symbol="🏛️" /> </h1>
-                <span> Logged in as: </span> 
+                <span id='loggedInAs'> Logged in as: </span> 
                 <span> { userName } </span>
             </div>
                 <button id="logOut"> Log Out </button>

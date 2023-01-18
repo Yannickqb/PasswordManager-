@@ -33,3 +33,7 @@ h1:hover {
 #logOut{
     right: 10px;
 }
+
+#loggedInAs{
+    margin-left: 5px;
+}

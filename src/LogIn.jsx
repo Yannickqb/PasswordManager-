@@ -19,6 +19,7 @@ export function LogIn() {
           </label>
           <input id="password" type="password"></input>
         </div>
+        <br></br>
         <button id="logIn" onClick={checkLogIn}> Log In </button>
         <p id="dontOwnAcc">
           {" "}

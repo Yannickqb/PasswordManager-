@@ -12,8 +12,8 @@
 
   color: rgba(0, 0, 0, 0.87);
   background-color: #e5e5f7;
-opacity: 0.9;
-background: linear-gradient(135deg, #bec0da55 25%, transparent 95%) -8px 0/ 16px 16px, linear-gradient(225deg, #bec0da 25%, transparent 25%) -8px 0/ 16px 16px, linear-gradient(315deg, #bec0da55 25%, transparent 25%) 0px 0/ 16px 16px, linear-gradient(45deg, #bec0da 25%, #e5e5f7 25%) 0px 0/ 16px 16px;
+  opacity: 0.9;
+  background: linear-gradient(135deg, #bec0da55 25%, transparent 95%) -8px 0/ 16px 16px, linear-gradient(225deg, #bec0da 25%, transparent 25%) -8px 0/ 16px 16px, linear-gradient(315deg, #bec0da55 25%, transparent 25%) 0px 0/ 16px 16px, linear-gradient(45deg, #bec0da 25%, #e5e5f7 25%) 0px 0/ 16px 16px;
 
 }
 
