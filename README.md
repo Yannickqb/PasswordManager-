@@ -30,3 +30,6 @@
 ## Add Password to Safe 
 >- input name + password
 >- encrypt and add to .json (data file)
+
+## Bemerkung 
+>- Da beim mergen etwas nicht geklapt hat ist noch alles im feature_freontend. 
