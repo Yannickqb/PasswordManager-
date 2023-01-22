@@ -32,4 +32,4 @@
 >- encrypt and add to .json (data file)
 
 ## Bemerkung 
->- Da beim mergen etwas nicht geklapt hat ist noch alles im feature_freontend. 
+>- Da beim mergen etwas nicht geklapt hat ist das Frontend noch im feature_freontendend und das Backend im feature_Decryption/Encryption. 
